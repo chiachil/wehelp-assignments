@@ -1,0 +1,154 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+body {
+	line-height: 1;
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    color: black;
+}
+*, *::before, *::after{
+    box-sizing:border-box;
+}
+
+.fz-40{
+    font-size: 40px;
+}
+
+.px-16{
+    padding-left: 16px;
+    padding-right: 16px;
+}
+.py-32{
+    padding-top: 32px;
+    padding-bottom: 32px;
+}
+.mb-16{
+    margin-bottom: 16px;
+}
+.mb-32{
+    margin-bottom: 32px;
+}
+
+.header{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+.nav{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+.nav li{
+    width:80px;
+}
+.banner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    background-color: lightblue;
+}
+.item-wall{
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    flex-wrap: wrap;
+}
+.item{
+    width: 24%;
+    height: 200px;
+    flex-wrap: wrap;
+    background-image: url(https://images.unsplash.com/photo-1566475955255-404134a79aeb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8NCUzQTN8ZW58MHx8MHx8&w=1000&q=80);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-bottom: 16px;
+}
+span{
+    background-color: lightblue;
+}
+.header i{
+    display: none;
+}
+a{
+    display: block;
+    text-decoration: none;
+    color: black;
+    padding: 8px;
+}
+@media only screen and (min-width: 601px) and (max-width: 1200px){
+    .item-wall{
+        max-width: 90%;
+    }
+    .item{
+        width: 49%;
+    }
+    .header i{
+        display: none;
+    }
+}
+@media screen and (max-width: 600px){
+    .item-wall{
+        max-width: 90%;
+    }
+    .item{
+        width: 100%;
+    }
+    .nav li{
+        display: none;
+    }
+    .header i{
+        display: block;
+        font-size: 24px;
+    }
+}
