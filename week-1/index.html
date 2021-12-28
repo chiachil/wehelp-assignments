@@ -8,38 +8,55 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
     <title>My Website</title>
 </head>
 
 <body>
-    <!--header-->
-    <div class="header px-16 py-32">
+    <header class="px-16 py-32">
         <h1><a href="#">My Website</a></h1>
-        <ul class="nav">
-            <li><a href="#">Item 1</a></li>
-            <li><a href="#">Item 2</a></li>
-            <li><a href="#">Item 3</a></li>
-            <li><a href="#">Item 4</a></li>
+        <ul class="menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">Contact</a></li>
         </ul>
         <!-- mobile header-->
-        <i class="fas fa-bars"></i>
-    </div>
-
-    <div class="mb-32">
-        <p class="banner fz-40">Welcome to MyHome</p>
-    </div>
-    <div class="mb-16">
-        <ul class="item-wall">
-            <li class="item"><span><a href="#">Title 1</a></span></li>
-            <li class="item"><span><a href="#">Title 2</a></span></li>
-            <li class="item"><span><a href="#">Title 3</a></span></li>
-            <li class="item"><span><a href="#">Title 4</a></span></li>
-            <li class="item"><span><a href="#">Title 5</a></span></li>
-            <li class="item"><span><a href="#">Title 6</a></span></li>
-            <li class="item"><span><a href="#">Title 7</a></span></li>
-            <li class="item"><span><a href="#">Title 8</a></span></li>
-        </ul>
-    </div>
+        <a href="#" class="burgermenu"><i class="fas fa-bars"></i></a>
+    </header>
+    <main>
+        <div class="banner mb-32">
+            <p class="fz-40">Welcome to MyHome</p>
+        </div>
+        <div class="item-wall mb-32">
+            <ul>
+                <li class="item mb-16"><a href="#"><img src="image/london.jpg" alt="London"><span>London</span></a></li>
+                <li class="item mb-16"><a href="#"><img src="image/paris.jpeg" alt="Paris"><span>Paris</span></a>
+                </li>
+                <li class="item mb-16"><a href="#"><img src="image/madrid.jpg" alt="Madrid"><span>Madrid</span></a>
+                </li>
+                <li class="item mb-16"><a href="#"><img src="image/amsterdam.jpeg"
+                            alt="Amsterdam"><span>Amsterdam</span></a>
+                </li>
+                <li class="item mb-16"><a href="#"><img src="image/nyc.jpeg" alt="New York City"><span>New York
+                            City</span></a>
+                </li>
+                <li class="item mb-16"><a href="#"><img src="image/montreal.jpg"
+                            alt="Montreal"><span>Montreal</span></a>
+                </li>
+                <li class="item mb-16"><a href="#"><img src="image/shanghai.jpeg"
+                            alt="Shanghai"><span>Shanghai</span></a>
+                </li>
+                <li class="item mb-16"><a href="#"><img src="image/hongkong.jpg"
+                            alt="HongKong"><span>HongKong</span></a>
+                </li>
+            </ul>
+        </div>
+    </main>
 
 </body>
 

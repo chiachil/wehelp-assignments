@@ -28,7 +28,6 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
-
 ol, ul {
 	list-style: none;
 }
@@ -44,21 +43,110 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-body {
+body, a{
 	line-height: 1;
     font-size: 20px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 700;
+    font-family:"montserrat";
+    color: #333333;
+    display: block;
+    text-decoration: none;
     text-align: center;
-    color: black;
 }
 *, *::before, *::after{
     box-sizing:border-box;
 }
-
+/* header */
+header{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+.menu{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+.menu li{
+    flex:none;
+    width:100px;
+}
+.burgermenu{
+    display: none;
+}
+/* main */
+.banner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    background-color: lightblue;
+}
+/* 固定尺寸 */
+.item-wall{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+/* 外容器 */
+.item-wall ul{
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    flex-wrap: wrap;
+}
+/* 內元素 */
+.item{
+    width: 24%;
+}
+/* 外容器 */
+.item a{
+    display: flex;
+    flex-direction: column;
+}
+/* 內元素1 */
+.item img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
+}
+/* 內元素2 */
+.item span{
+    display: block;
+    background-color: lightblue;
+    padding: 8px;
+}
+/* 小電腦/pad螢幕 */
+@media (max-width: 1199px){
+    .item-wall{
+        max-width: 90%;
+    }
+    .item{
+        width: 49%;
+    }
+    .burgermenu{
+        display: none;
+    }
+}
+/* 手機螢幕 */
+@media (max-width: 600px){
+    .item-wall{
+        max-width: 90%;
+    }
+    .item{
+        width: 100%;
+    }
+    .menu{
+        display: none;
+    }
+    .burgermenu{
+        display: block;
+        font-size: 24px;
+    }
+}
 .fz-40{
     font-size: 40px;
 }
-
 .px-16{
     padding-left: 16px;
     padding-right: 16px;
@@ -72,83 +160,4 @@ body {
 }
 .mb-32{
     margin-bottom: 32px;
-}
-
-.header{
-    display: flex;
-    justify-content:space-between;
-    align-items: center;
-}
-.nav{
-    display: flex;
-    justify-content:space-between;
-    align-items: center;
-}
-.nav li{
-    width:80px;
-}
-.banner{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 300px;
-    background-color: lightblue;
-}
-.item-wall{
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items:center;
-    flex-wrap: wrap;
-}
-.item{
-    width: 24%;
-    height: 200px;
-    flex-wrap: wrap;
-    background-image: url(https://images.unsplash.com/photo-1566475955255-404134a79aeb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8NCUzQTN8ZW58MHx8MHx8&w=1000&q=80);
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    margin-bottom: 16px;
-}
-span{
-    background-color: lightblue;
-}
-.header i{
-    display: none;
-}
-a{
-    display: block;
-    text-decoration: none;
-    color: black;
-    padding: 8px;
-}
-@media only screen and (min-width: 601px) and (max-width: 1200px){
-    .item-wall{
-        max-width: 90%;
-    }
-    .item{
-        width: 49%;
-    }
-    .header i{
-        display: none;
-    }
-}
-@media screen and (max-width: 600px){
-    .item-wall{
-        max-width: 90%;
-    }
-    .item{
-        width: 100%;
-    }
-    .nav li{
-        display: none;
-    }
-    .header i{
-        display: block;
-        font-size: 24px;
-    }
 }
