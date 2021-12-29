@@ -1,163 +1,303 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
 }
-ol, ul {
-	list-style: none;
+
+ol,
+ul {
+    list-style: none;
 }
-blockquote, q {
-	quotes: none;
+
+blockquote,
+q {
+    quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
 }
+
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
-body, a{
-	line-height: 1;
+
+body,
+a {
+    line-height: 1;
     font-size: 20px;
     font-weight: 700;
-    font-family:"montserrat";
+    font-family: "montserrat";
     color: #333333;
     display: block;
     text-decoration: none;
     text-align: center;
+    background-color: #fff;
 }
-*, *::before, *::after{
-    box-sizing:border-box;
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
+
 /* header */
-header{
+header {
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
     align-items: center;
 }
-.menu{
+
+.menu {
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
     align-items: center;
 }
-.menu li{
-    flex:none;
-    width:100px;
+
+.menu li {
+    flex: none;
+    width: 120px;
 }
-.burgermenu{
+
+label,
+input {
     display: none;
 }
+
 /* main */
-.banner{
+.banner {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 300px;
     background-color: lightblue;
 }
+
 /* 固定尺寸 */
-.item-wall{
+.item-wall {
     max-width: 1200px;
     margin: 0 auto;
 }
+
 /* 外容器 */
-.item-wall ul{
+.item-wall ul {
     display: flex;
     justify-content: space-between;
-    align-items:center;
+    align-items: center;
     flex-wrap: wrap;
 }
+
 /* 內元素 */
-.item{
+.item {
     width: 24%;
 }
+
 /* 外容器 */
-.item a{
+.item a {
     display: flex;
     flex-direction: column;
 }
+
 /* 內元素1 */
-.item img{
+.item img {
     width: 100%;
     height: 200px;
     object-fit: cover;
     object-position: center;
 }
+
 /* 內元素2 */
-.item span{
+.item span {
     display: block;
     background-color: lightblue;
     padding: 8px;
 }
+
 /* 小電腦/pad螢幕 */
-@media (max-width: 1199px){
-    .item-wall{
+@media (max-width: 1199px) {
+    .item-wall {
         max-width: 90%;
     }
-    .item{
+
+    .item {
         width: 49%;
     }
-    .burgermenu{
+
+    label {
         display: none;
     }
 }
+
 /* 手機螢幕 */
-@media (max-width: 600px){
-    .item-wall{
+@media (max-width: 600px) {
+    .item-wall {
         max-width: 90%;
     }
-    .item{
+
+    .item {
         width: 100%;
     }
-    .menu{
+
+    .menu {
+        width: 100%;
+        position: absolute;
+        top: 89px;
+        left: 0px;
+        max-height: 0;
+        overflow: hidden;
+        background-color: #fff;
+        display: block;
+        transition: .5s;
+    }
+
+    .menu li {
+        display: block;
+        margin: 0 auto;
+        padding: 24px;
+    }
+
+    input {
         display: none;
     }
-    .burgermenu{
+
+    label {
         display: block;
         font-size: 24px;
     }
+
+    #burgermenu:checked+.menu {
+        display: block;
+        max-height: 300px;
+        transition: .5s;
+    }
 }
-.fz-40{
+
+.fz-40 {
     font-size: 40px;
 }
-.px-16{
+
+.px-16 {
     padding-left: 16px;
     padding-right: 16px;
 }
-.py-32{
+
+.py-32 {
     padding-top: 32px;
     padding-bottom: 32px;
 }
-.mb-16{
+
+.mb-16 {
     margin-bottom: 16px;
 }
-.mb-32{
+
+.mb-32 {
     margin-bottom: 32px;
 }
