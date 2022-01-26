@@ -79,14 +79,14 @@ mysql> SELECT * FROM `member`;
 mysql> SELECT COUNT(*) FROM `member`;
 ```
 ###### 執行畫面
-![image](https://github.com/chiachil/wehelp-assignments/blob/master/week-5/screenshots/screenshots-7.png)
+![image](https://github.com/chiachil/wehelp-assignments/blob/master/week-5/screenshots/screenshots-7.png)</br>
 2. 取得 member 資料表中,所有會員 follower_count 欄位的總和。
 ###### 指令
 ```
 mysql> SELECT SUM(`follower_count`) FROM `member`;
 ```
 ###### 執行畫面
-![image](https://github.com/chiachil/wehelp-assignments/blob/master/week-5/screenshots/screenshots-8.png)
+![image](https://github.com/chiachil/wehelp-assignments/blob/master/week-5/screenshots/screenshots-8.png)</br>
 3. 取得 member 資料表中,所有會員 follower_count 欄位的平均數。
 ###### 指令
 ```
@@ -106,7 +106,9 @@ mysql> CREATE TABLE `message`(
     -> `time` DATETIME NOT NULL DEFAULT NOW());
 
 mysql> ALTER TABLE `message`
-    -> ADD FOREIGN KEY(`member_id`) REFERENCES `member`(`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+    -> ADD FOREIGN KEY(`member_id`)
+    -> REFERENCES `member`(`id`)
+    -> ON DELETE CASCADE ON UPDATE CASCADE;
 
 mysql> DESCRIBE `message`;
 ```
