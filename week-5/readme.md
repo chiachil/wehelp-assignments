@@ -1,5 +1,5 @@
-#screenshots
-##requirement 3
+# Screenshots
+## Requirement 3: SQL CRUD
 ---
 1. 使用 INSERT 指令新增一筆資料到 member 資料表中,這筆資料的 username 和
 password 欄位必須是 test。接著繼續新增至少 4 筆隨意的資料。（參2.下方圖）
@@ -19,5 +19,11 @@ password 欄位必須是 test。接著繼續新增至少 4 筆隨意的資料。
 改成 test2。
 ![image](https://github.com/chiachil/wehelp-assignments/blob/master/week-5/screenshots/screenshots-6.png)
 
-##requirement 4
+## Requirement 4: SQL Aggregate Functions
 ---
+1. 取得 member 資料表中,總共有幾筆資料 ( 幾位會員 )。
+![image](https://github.com/chiachil/wehelp-assignments/blob/master/week-5/screenshots/screenshots-7.png)
+2. 取得 member 資料表中,所有會員 follower_count 欄位的總和。
+![image](https://github.com/chiachil/wehelp-assignments/blob/master/week-5/screenshots/screenshots-8.png)
+3. 取得 member 資料表中,所有會員 follower_count 欄位的平均數。
+![image](https://github.com/chiachil/wehelp-assignments/blob/master/week-5/screenshots/screenshots-9.png)
