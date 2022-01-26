@@ -30,7 +30,7 @@ password 欄位必須是 test。接著繼續新增至少 4 筆隨意的資料。
 1. 在資料庫中,建立新資料表,取名字為 message。資料表中必須包含以下欄位設定:</br>
 ![image](https://github.com/chiachil/wehelp-assignments/blob/master/week-5/screenshots/screenshots-10.png)
 ---
-####### 要求外：新增資料表資料
+###### 要求外：新增資料表資料
 ![image](https://github.com/chiachil/wehelp-assignments/blob/master/week-5/screenshots/screenshots-11.png)
 ---
 2. 使用 SELECT 搭配 JOIN 語法,取得所有留言,結果須包含留言者會員的姓名。</br>
