@@ -7,7 +7,7 @@ password 欄位必須是 test。接著繼續新增至少 4 筆隨意的資料。
 mysql> INSERT INTO `member`
     -> (id,name,username,password,follower_count)
     -> VALUES
-    -> (1,"test1","test","test",200);
+    -> (1,"test1","test","test",0);
 
 mysql> INSERT INTO `member`
     -> (name,username,password,follower_count)
