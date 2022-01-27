@@ -90,7 +90,7 @@ mysql> SELECT SUM(`follower_count`) FROM `member`;
 3. 取得 member 資料表中,所有會員 follower_count 欄位的平均數。
 ###### 指令
 ```
-mysql> SELECT ARG(`follower_count`) FROM `member`;
+mysql> SELECT AVG(`follower_count`) FROM `member`;
 ```
 ###### 執行畫面
 ![image](https://github.com/chiachil/wehelp-assignments/blob/master/week-5/screenshots/screenshots-9.png)
