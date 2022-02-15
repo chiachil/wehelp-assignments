@@ -9,6 +9,15 @@ load_dotenv()
 app = Flask(__name__)
 app.secret_key = os.getenv('SECRET_KEY')
 
+# 開啟一個共用的資料庫連線
+connection = mysql.connector.connect(
+    host=os.getenv('DB_HOST'),
+    user=os.getenv('DB_USER'),
+    port=os.getenv('DB_PORT'),
+    password=os.getenv('DB_PASSWORD'),
+    database=os.getenv('DB_NAME')
+)
+
 # 首頁
 @app.route("/")
 def index():
@@ -22,26 +31,20 @@ def signup():
     password = request.form["password"]
     if name == "" or username == "" or password == "":
         return redirect(url_for("error", message = "姓名、帳號和密碼任一不能為空"))
-    sql = "SELECT username FROM member WHERE username = '%s'" %username
-    connection = mysql.connector.connect(
-        host=os.getenv('DB_HOST'),
-        user=os.getenv('DB_USER'),
-        port=os.getenv('DB_PORT'),
-        password=os.getenv('DB_PASSWORD'),
-        database=os.getenv('DB_NAME')
-    )
     cursor = connection.cursor(buffered=True)
-    cursor.execute(sql)
+    # 改用 cursor.execute() 的第二個參數來帶入變數資料到 SQL 語句，預防SQL Injection
+    cursor.execute("SELECT username FROM member WHERE username = %s", (username,))
     data = cursor.fetchone()
     if data:
         cursor.close()
-        connection.close()
+        print(data)
         return redirect(url_for("error", message = "帳號已經被註冊"))
-    sql = "INSERT INTO member (name,username,password) VALUES ('%s', '%s', '%s')" % (name, username, password)
-    cursor.execute(sql)
+    sql = "INSERT INTO member (name,username,password) VALUES (%(name)s, %(username)s, %(password)s)"
+    # 以字典型態傳遞參數，確保多個參數的順序正確
+    params = {"name": name, "username": username, "password": password}
+    cursor.execute(sql,params)
     connection.commit()
     cursor.close()
-    connection.close()
     return redirect(url_for("index"))
 
 # 登入功能
@@ -51,23 +54,16 @@ def signin():
     password = request.form["password"]
     if username == "" or password == "":
         return redirect(url_for("error", message = "帳號和密碼任一不能為空"))
-    sql = "SELECT name,username,password FROM member WHERE username = '%s' AND password = '%s'" % (username,password)
-    connection = mysql.connector.connect(
-        host=os.getenv('DB_HOST'),
-        user=os.getenv('DB_USER'),
-        port=os.getenv('DB_PORT'),
-        password=os.getenv('DB_PASSWORD'),
-        database=os.getenv('DB_NAME')
-    )
+    sql = "SELECT name,username,password FROM member WHERE username = %(username)s AND password = %(password)s"
+    params = {"username": username,"password": password}
     cursor = connection.cursor(buffered=True)
-    cursor.execute(sql)
+    cursor.execute(sql,params)
     data = cursor.fetchall()
     if data:
         session["username"] = username
         name = data[0][0]
         cursor.close()
-        connection.close()
-        return redirect(url_for("member", name = "%s" % name))
+        return redirect(url_for("member", name = name))
     return redirect(url_for("error", message = "帳號或密碼輸入錯誤"))
 
 # 會員頁
